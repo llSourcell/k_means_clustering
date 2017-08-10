@@ -66,6 +66,8 @@ def kmeans(k, epsilon=0, distance='euclidian'):
             # prototype = dataset[np.random.randint(0, num_instances, size=1)[0]]
             tmp_prototypes[index, :] = prototype
 
+        # store current prototypes to compare with updated centroids
+        prototypes_old = prototypes
         prototypes = tmp_prototypes
 
         history_centroids.append(tmp_prototypes)
